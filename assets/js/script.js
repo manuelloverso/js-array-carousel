@@ -43,4 +43,23 @@ function nextImg() {
 }
 
 //Function to scroll to the previous img
-function prevImg() {}
+function prevImg() {
+  //Decrementing the index by 1 on each click
+  indexImg--;
+
+  //Selecting all the imgages in the carousel
+  const allImg = document.querySelectorAll(".carousel img");
+  console.log(allImg);
+
+  //Remove the active class to the images
+  const activeImg = document.querySelector(".active");
+  activeImg.classList.remove("active");
+
+  //Add the class active
+  allImg[indexImg].classList.add("active");
+
+  // Go back to the last image when the first one is active
+  if (indexImg == 0) {
+    indexImg = allImg.length;
+  }
+}
