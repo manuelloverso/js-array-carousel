@@ -1,3 +1,16 @@
 body {
-  background-color: red;
+  /* height: 100vh; */
+}
+
+.carousel {
+  width: 80%;
+  max-width: 700px;
+
+  & img {
+    width: 100%;
+  }
+
+  /* & img:not(.active) {
+    display: none;
+  } */
 }
