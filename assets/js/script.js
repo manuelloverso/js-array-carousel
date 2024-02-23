@@ -27,7 +27,11 @@ function nextImg() {
 
   //Selecting all the imgages in the carousel
   const allImg = document.querySelectorAll(".carousel img");
-  console.log(allImg);
+
+  // Go back to the first image when the last one is active
+  if (indexImg > allImg.length - 1) {
+    indexImg = 0;
+  }
 
   //Remove the active class to the images
   const activeImg = document.querySelector(".active");
@@ -35,11 +39,7 @@ function nextImg() {
 
   //Add the class active
   allImg[indexImg].classList.add("active");
-
-  // Go back to the first image when the last one is active
-  if (indexImg == allImg.length - 1) {
-    indexImg = -1;
-  }
+  console.log(allImg);
 }
 
 //Function to scroll to the previous img
@@ -51,15 +51,15 @@ function prevImg() {
   const allImg = document.querySelectorAll(".carousel img");
   console.log(allImg);
 
+  // Go back to the last image when the first one is active
+  if (indexImg < 0) {
+    indexImg = allImg.length - 1;
+  }
+
   //Remove the active class to the images
   const activeImg = document.querySelector(".active");
   activeImg.classList.remove("active");
 
   //Add the class active
   allImg[indexImg].classList.add("active");
-
-  // Go back to the last image when the first one is active
-  if (indexImg == 0) {
-    indexImg = allImg.length;
-  }
 }

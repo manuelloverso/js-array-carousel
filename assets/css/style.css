@@ -1,10 +1,37 @@
 body {
   /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel {
   width: 80%;
   max-width: 700px;
+  position: relative;
+
+  & button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 40px;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+  }
+
+  .next {
+    top: 0;
+    left: 50%;
+  }
+
+  .prev {
+    bottom: 0;
+    left: 50%;
+  }
 
   & img {
     width: 100%;
