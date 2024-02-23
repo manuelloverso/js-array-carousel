@@ -1,12 +1,12 @@
 // Add the images into an array
 const imgArray = ["01", "02", "03", "04", "05"];
 
-let activeImg = 0;
+let indexImg = 0;
 
 // Selecting carousel container
 const carousel = document.querySelector(".carousel");
 
-console.log(carousel, imgArray, activeImg);
+console.log(carousel, imgArray, indexImg);
 
 // Scrolling to generate array imgages into the dom
 for (let i = 0; i < imgArray.length; i++) {
@@ -14,6 +14,33 @@ for (let i = 0; i < imgArray.length; i++) {
   // console.log(singleImg);
   carousel.insertAdjacentHTML(
     "beforeend",
-    `<img src="./assets/img/${singleImg}.webp" alt="" />`
+    `<img class="${
+      i == indexImg ? "active" : ""
+    }" src="./assets/img/${singleImg}.webp" alt="" />`
   );
 }
+
+//Function to scroll to the next img
+function nextImg() {
+  //Incrementing the index by 1 on each click
+  indexImg++;
+
+  //Selecting all the imgages in the carousel
+  const allImg = document.querySelectorAll(".carousel img");
+  console.log(allImg);
+
+  //Remove the active class to the images
+  const activeImg = document.querySelector(".active");
+  activeImg.classList.remove("active");
+
+  //Add the class active
+  allImg[indexImg].classList.add("active");
+
+  // Go back to the first image when the last one is active
+  if (indexImg == allImg.length - 1) {
+    indexImg = -1;
+  }
+}
+
+//Function to scroll to the previous img
+function prevImg() {}

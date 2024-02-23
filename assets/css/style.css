@@ -10,7 +10,7 @@ body {
     width: 100%;
   }
 
-  /* & img:not(.active) {
+  & img:not(.active) {
     display: none;
-  } */
+  }
 }
