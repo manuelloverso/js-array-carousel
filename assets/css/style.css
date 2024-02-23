@@ -7,9 +7,10 @@ body {
 
 .container {
   width: 90%;
-  max-width: 1400px;
-  height: 520px;
+  max-width: 1000px;
+  height: 450px;
   position: relative;
+  box-shadow: 0 0 20px 0;
 }
 
 .carousel {
@@ -27,6 +28,12 @@ body {
     border-radius: 50%;
     color: white;
     background-color: black;
+    transition: width 0.2s ease-in-out;
+  }
+
+  & button:hover {
+    width: 48px;
+    aspect-ratio: 1;
   }
 
   .next {
@@ -54,9 +61,9 @@ body {
 
 .small-container {
   position: absolute;
-  width: 300px;
+  width: 200px;
 
-  height: 520px;
+  height: 450px;
   right: 0;
   top: 0;
 
