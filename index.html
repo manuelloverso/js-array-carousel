@@ -14,21 +14,25 @@
     <title>JS Carousel</title>
   </head>
   <body class="">
-    <!-- Carousel -->
-    <div class="carousel">
-      <button onclick="prevImg()" class="prev">
-        <i class="fa-solid fa-angle-down"></i>
-      </button>
-      <button onclick="nextImg()" class="next">
-        <i class="fa-solid fa-angle-up"></i>
-      </button>
-      <!-- <div class="small-container">
-        <img src="./assets/img/01.webp" alt="" class="small-img" />
-        <img src="./assets/img/02.webp" alt="" class="small-img" />
-        <img src="./assets/img/03.webp" alt="" class="small-img" />
-        <img src="./assets/img/04.webp" alt="" class="small-img" />
-        <img src="./assets/img/05.webp" alt="" class="small-img" />
-      </div> -->
+    <div class="container">
+      <!-- Carousel -->
+      <div class="carousel">
+        <button onclick="nextImg()" class="prev">
+          <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <button onclick="prevImg()" class="next">
+          <i class="fa-solid fa-angle-up"></i>
+        </button>
+      </div>
+
+      <!-- Side Images -->
+      <div class="small-container">
+        <div class="img-box"></div>
+        <div class="img-box"></div>
+        <div class="img-box"></div>
+        <div class="img-box"></div>
+        <div class="img-box"></div>
+      </div>
     </div>
 
     <!-- JS File -->

@@ -5,26 +5,16 @@ body {
   align-items: center;
 }
 
-.carousel {
+.container {
   width: 90%;
   max-width: 1400px;
   height: 520px;
   position: relative;
+}
 
-  .small-container {
-    position: absolute;
-    width: 300px;
-
-    height: 520px;
-    right: 0;
-    top: 0;
-
-    & img {
-      display: block;
-      width: 100%;
-      height: calc(100% / 5);
-    }
-  }
+.carousel {
+  width: 100%;
+  height: 100%;
 
   & button {
     display: flex;
@@ -57,5 +47,44 @@ body {
 
   & > img:not(.active) {
     display: none;
+  }
+}
+
+.small-container {
+  position: absolute;
+  width: 300px;
+
+  height: 520px;
+  right: 0;
+  top: 0;
+
+  .img-box {
+    width: 100%;
+    height: calc(100% / 5);
+    position: relative;
+  }
+
+  .img-box:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.497);
+  }
+
+  & img {
+    object-fit: cover;
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .active {
+    border: 2px solid rgb(25, 138, 176);
+    z-index: 2;
   }
 }

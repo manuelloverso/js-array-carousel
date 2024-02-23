@@ -21,15 +21,13 @@ for (let i = 0; i < imgArray.length; i++) {
 }
 
 //Bonus
-const smallContainer = document.createElement("div");
-smallContainer.classList.add("small-container");
-carousel.append(smallContainer);
+const imgBox = document.querySelectorAll(".img-box");
 
 // Scrolling to generate array imgages into the dom
-for (let i = 0; i < imgArray.length; i++) {
+for (let i = 0; i < imgBox.length; i++) {
   let singleImg = imgArray[i];
   // console.log(singleImg);
-  smallContainer.insertAdjacentHTML(
+  imgBox[i].insertAdjacentHTML(
     "beforeend",
     `<img class="small-img ${
       i == indexImg ? "active" : ""
@@ -43,7 +41,8 @@ function nextImg() {
   indexImg++;
 
   //Selecting all the imgages in the carousel
-  const allImg = document.querySelectorAll(".carousel > img");
+  const allImg = document.querySelectorAll(".carousel  img");
+  const allBoxImg = document.querySelectorAll(".small-container  img");
 
   // Go back to the first image when the last one is active
   if (indexImg > allImg.length - 1) {
@@ -51,12 +50,17 @@ function nextImg() {
   }
 
   //Remove the active class to the images
-  const activeImg = document.querySelector(".active");
+  const activeImg = document.querySelector(".carousel .active");
   activeImg.classList.remove("active");
+
+  const smallActiveImg = document.querySelector(".small-container .active");
+  smallActiveImg.classList.remove("active");
 
   //Add the class active
   allImg[indexImg].classList.add("active");
   console.log(allImg);
+
+  allBoxImg[indexImg].classList.add("active");
 }
 
 //Function to scroll to the previous img
@@ -65,8 +69,8 @@ function prevImg() {
   indexImg--;
 
   //Selecting all the imgages in the carousel
-  const allImg = document.querySelectorAll(".carousel > img");
-  console.log(allImg);
+  const allImg = document.querySelectorAll(".carousel  img");
+  const allBoxImg = document.querySelectorAll(".small-container  img");
 
   // Go back to the last image when the first one is active
   if (indexImg < 0) {
@@ -74,9 +78,13 @@ function prevImg() {
   }
 
   //Remove the active class to the images
-  const activeImg = document.querySelector(".active");
+  const activeImg = document.querySelector(".carousel .active");
   activeImg.classList.remove("active");
+
+  const smallActiveImg = document.querySelector(".small-container .active");
+  smallActiveImg.classList.remove("active");
 
   //Add the class active
   allImg[indexImg].classList.add("active");
+  allBoxImg[indexImg].classList.add("active");
 }
