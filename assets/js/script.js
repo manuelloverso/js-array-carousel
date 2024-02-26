@@ -16,7 +16,7 @@ for (let i = 0; i < imgArray.length; i++) {
     "beforeend",
     `<img class="${
       i == indexImg ? "active" : ""
-    }" src="./assets/img/${singleImg}.webp" alt="" />`
+    }" src="./assets/img/${singleImg}.jpg" alt="" />`
   );
 }
 
@@ -31,9 +31,26 @@ for (let i = 0; i < imgBox.length; i++) {
     "beforeend",
     `<img class="small-img ${
       i == indexImg ? "active" : ""
-    }" src="./assets/img/${singleImg}.webp" alt="" />`
+    }" src="./assets/img/${singleImg}.jpg" alt="" />`
   );
 }
+
+//Try to add images switching on thumbnail click
+/* for (let i = 0; i < imgBox.length; i++) {
+  imgBox[i].addEventListener("click", function () {
+    console.log(imgBox[i]);
+
+    const activeImages = document.querySelector(".img-box .active");
+    console.log(activeImages);
+
+    const innerImg = imgBox[i].querySelector("img");
+    console.log(innerImg);
+
+    activeImages.classList.remove("active");
+
+    innerImg.classList.add("active");
+  });
+} */
 
 //Function to scroll to the next img
 function nextImg() {
